@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Project One",
 }
 
-const pathPrefix = process.env.NODE_ENV === 'production' ? '/ProjectOne/public' : ''
+const pathPrefix = process.env.NODE_ENV === 'production' ? '/public' : ''
 
 export default function RootLayout({
   children,
