@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import exampleImg from '@/public/image/example.png'
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
       Project One
       <div className='relative h-[400px] w-[400px]'>
         <Image
-          src={'/image/example.png'}
+          src={exampleImg}
           fill
           alt='example image'
           style={{ objectFit: 'contain' }}

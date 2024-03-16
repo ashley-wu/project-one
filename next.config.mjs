@@ -5,7 +5,7 @@ const nextConfig = {
   output: isProd ? 'export' : undefined,
   reactStrictMode: true,
   assetPrefix: isProd ? 'https://ashley-wu.github.io/ProjectOne' : undefined,
-  basePath: '/ProjectOne',
+  // basePath: isProd ? '/ProjectOne' : undefined,
 };
 
 export default nextConfig;
