@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Head } from "next/document"
 import "./globals.css"
 
 import { noto_sans_tc, noto_sans_mono } from '@/app/lib/font'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description: "Project One",
 }
 
-const pathPrefix = process.env.NODE_ENV === 'production' ? 'https://ashley-wu.github.io/ProjectOne/public' : ''
+// const pathPrefix = process.env.NODE_ENV === 'production' ? 'https://ashley-wu.github.io/ProjectOne/public' : ''
 
 export default function RootLayout({
   children,
@@ -17,12 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW" className={`${noto_sans_tc.variable} ${noto_sans_mono.variable}`}>
-      <head>
+      <Head>
         {/* Font Awesome */}
-        <link href={`${pathPrefix}/fontawesome/css/fontawesome.css`} rel='stylesheet' />
-        <link href={`${pathPrefix}/fontawesome/css/brands.css`} rel='stylesheet' />
-        <link href={`${pathPrefix}/fontawesome/css/solid.css`} rel='stylesheet' />
-      </head>
+        <link href={`/fontawesome/css/fontawesome.css`} rel='stylesheet' />
+        <link href={`/fontawesome/css/brands.css`} rel='stylesheet' />
+        <link href={`/fontawesome/css/solid.css`} rel='stylesheet' />
+      </Head>
       <body>{children}</body>
     </html>
   )
