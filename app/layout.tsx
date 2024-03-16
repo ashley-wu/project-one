@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Project One",
 }
 
+const pathPrefix = process.env.NODE_ENV === 'production' ? '/ProjectOne/public' : ''
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,9 +19,9 @@ export default function RootLayout({
     <html lang="zh-TW" className={`${noto_sans_tc.variable} ${noto_sans_mono.variable}`}>
       <head>
         {/* Font Awesome */}
-        <link href='/fontawesome/css/fontawesome.css' rel='stylesheet' />
-        <link href='/fontawesome/css/brands.css' rel='stylesheet' />
-        <link href='/fontawesome/css/solid.css' rel='stylesheet' />
+        <link href={`${pathPrefix}/fontawesome/css/fontawesome.css`} rel='stylesheet' />
+        <link href={`${pathPrefix}/fontawesome/css/brands.css`} rel='stylesheet' />
+        <link href={`${pathPrefix}/fontawesome/css/solid.css`} rel='stylesheet' />
       </head>
       <body>{children}</body>
     </html>
