@@ -6,7 +6,7 @@ export default function Home() {
   console.log('assetPrefix', process.env.NEXT_PUBLIC_ASSET_PREFIX)
 
   return (
-    <main className="min-h-screen grid items-center justify-items-center p-24">
+    <main className="grid items-center justify-items-center p-24">
       Project One
       <div className='h-[400px] w-[400px]'>
         <img src={`./image/example.PNG`} alt="example image" />
@@ -20,6 +20,7 @@ export default function Home() {
           alt='example image'
           style={{ objectFit: 'contain' }}
           priority
+          unoptimized
         />
       </div>
     </main>

@@ -3,13 +3,43 @@
 @tailwind utilities;
 
 /* Font Awesome */
-@import "@/public/fontawesome/css/fontawesome.css";
-@import "@/public/fontawesome/css/brands.css";
-@import "@/public/fontawesome/css/solid.css";
+@import '@/public/fontawesome/css/fontawesome.css';
+@import '@/public/fontawesome/css/brands.css';
+@import '@/public/fontawesome/css/solid.css';
 
 @layer base {
   :root {
     --color-primary: 2 53 145;
+  }
+}
+
+body {
+  @apply bg-gray-50 text-primary;
+}
+
+#app_container {
+  @apply min-h-screen;
+  @apply grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'main'
+    'footer';
+}
+
+#app_container > main {
+  grid-area: main;
+}
+
+#app_container > footer {
+  @apply sticky bottom-0 left-0 right-0;
+  @apply border-t-2 border-t-gray-100;
+  grid-area: footer;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
@@ -20,15 +50,5 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-  }
-}
-
-body {
-  @apply bg-gray-50 text-primary;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }

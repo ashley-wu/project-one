@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className={`${noto_sans_tc.variable} ${noto_sans_mono.variable}`}>
       <body>
-        {children}
-        <Footer />
+        <main id='app_container'>
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   )
