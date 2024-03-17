@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
-  output: isProd ? 'export' : undefined,
+  output: process.env.NEXT_PUBLIC_OUTPUT || '',
   reactStrictMode: true,
-  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX,
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
