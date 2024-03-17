@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   output: isProd ? 'export' : undefined,
   reactStrictMode: true,
-  assetPrefix: isProd ? '/project_one/' : undefined,
+  assetPrefix: isProd ? 'https://ashley-wu.github.io/project_one/' : undefined,
   basePath: isProd ? '/project_one' : undefined,
   images: {
     formats: ['image/avif', 'image/webp'],
