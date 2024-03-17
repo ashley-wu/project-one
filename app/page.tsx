@@ -20,6 +20,7 @@ export default function Home() {
           alt='example image'
           // style={{ objectFit: 'contain' }}
           priority
+          unoptimized
         />
       </div>
     </main>
