@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Project One",
 }
 
+import Footer from '@/app/components/Footer'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW" className={`${noto_sans_tc.variable} ${noto_sans_mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
