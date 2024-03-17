@@ -9,7 +9,7 @@ export default function Home() {
     <main className="min-h-screen grid items-center justify-items-center p-24">
       Project One
       <div className='h-[400px] w-[400px]'>
-        <img src={`/image/example.PNG`} alt="example image" />
+        <img src={`./image/example.PNG`} alt="example image" />
       </div>
       <div className='relative h-[400px] w-[400px]'>
         <Image
