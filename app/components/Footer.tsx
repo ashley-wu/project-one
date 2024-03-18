@@ -4,24 +4,59 @@ import { usePathname } from 'next/navigation'
 
 export default function Footer() {
   return (
-    <footer className='grid grid-cols-2 justify-between p-4 bg-gray-50 sticky bottom-0 left-0 right-0'>
-      <nav>
-        <ul>
-          <NavLink path='/' title='首頁' />
-          <NavLink path='/fares' title='服務費用' />
-        </ul>
-      </nav>
-      <div>
-        <Link href='https://www.facebook.com/profile.php?id=100063649581721' target='_blank' className='mr-2'>
-          <i className="fa-brands fa-square-facebook text-4xl text-primary"></i>
-        </Link>
-        <Link href='https://line.me/R/ti/p/%40qsj5646s' target='_blank'>
-          <i className="fa-brands fa-line text-4xl text-primary"></i>
-        </Link>
-      </div>
+    <footer className='bg-white'>
+      <section className='grid max-w-[800px] mx-auto p-6'>
+        <div className='font-semibold'>晉龍號海釣遊艇船隊</div>
+        <ContactInfo />
+        <SocialMedia />
+      </section>
     </footer>
   )
 }
+
+const ContactInfo = () => {
+  return (
+    <div className='grid md:grid-flow-col pt-4'>     
+      <div className='flex items-center gap-x-2 text-sm py-1'>
+        <i className="fa-solid fa-phone-volume"></i>
+        <p>( +886 ) 0918 373 560</p>
+      </div>
+      <div className='flex items-center gap-x-2 text-sm py-1'>
+        <i className="fa-regular fa-envelope"></i>
+        <p>jinlong.yacht@gmail.com</p>
+      </div>
+      <div className='flex items-center gap-x-2 text-sm py-1'>
+        <i className="fa-solid fa-location-dot"></i>
+        <p>八斗子碧砂漁港 基隆市中正區北寧路211號</p>
+      </div>
+    </div>
+  )
+}
+
+const SocialMedia = () => {
+  return (
+    <div className='pt-2'>
+      <Link 
+        href='https://www.facebook.com/profile.php?id=100063649581721'
+        className='mr-2'
+        target='_blank'
+      >
+        <i className='fa-brands fa-square-facebook text-[34px] text-[#3B5998]'></i>
+      </Link>
+      <Link 
+        href='https://line.me/R/ti/p/%40qsj5646s'
+        className=''
+        target='_blank'
+      >
+        <i className='fa-brands fa-line text-3xl text-[#06C755]'></i>
+      </Link>
+    </div>
+  )
+}
+
+
+
+
 
 const NavLink = ({ path, title }: { path: string, title: string}) => {
   const pathname = usePathname()
