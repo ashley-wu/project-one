@@ -20,6 +20,8 @@ const config: Config = {
       current: 'currentColor',
       blue: colors.blue,
       gray: colors.gray,
+      white: '#ffffff',
+      offwhite: '#fafafa',
     },
     extend: {
       // backgroundImage: {
