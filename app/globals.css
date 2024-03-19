@@ -34,8 +34,13 @@ body {
 
 #app_container > footer {
   @apply sticky bottom-0 left-0 right-0;
-  @apply border-t-2 border-t-offwhite;
+  @apply bg-white;
   grid-area: footer;
+}
+
+#contact_info {
+  @apply grid pt-4;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 @layer utilities {
