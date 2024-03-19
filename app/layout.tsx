@@ -4,7 +4,7 @@ import "./globals.css"
 import { noto_sans_tc, noto_sans_mono } from '@/app/lib/font'
 
 export const metadata: Metadata = {
-  title: "Project One",
+  title: "晉龍號",
   description: "Project One",
 }
 
