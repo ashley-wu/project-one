@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  output: process.env.NEXT_PUBLIC_OUTPUT || '',
+  output: 'export',
   reactStrictMode: true,
   assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
