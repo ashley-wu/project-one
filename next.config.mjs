@@ -3,7 +3,7 @@
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
+  assetPrefix: '',
   basePath: '',
   images: {
     formats: ['image/avif', 'image/webp'],
