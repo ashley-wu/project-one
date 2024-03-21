@@ -4,7 +4,7 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  basePath: '',
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
