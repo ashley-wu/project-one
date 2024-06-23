@@ -6,6 +6,7 @@
 @import '@/public/fontawesome/css/fontawesome.css';
 @import '@/public/fontawesome/css/brands.css';
 @import '@/public/fontawesome/css/solid.css';
+@import '@/public/fontawesome/css/regular.css';
 
 @layer base {
   :root {
@@ -14,47 +15,75 @@
 }
 
 body {
-  @apply bg-white text-primary;
+  @apply bg-offwhite text-gray-600;
 }
 
 #app_container {
   @apply min-h-screen;
   @apply grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
+    'header'
     'main'
     'footer';
 }
 
 #app_container > main {
-  @apply grid justify-items-center content-center;
   grid-area: main;
+}
+
+#app_container > header {
+  @apply sticky top-0 left-0 right-0;
+  @apply bg-offwhite h-[60px];
+  grid-area: header;
+  transition: all 0.4s ease-out;
 }
 
 #app_container > footer {
   @apply sticky bottom-0 left-0 right-0;
-  @apply bg-white;
+  @apply bg-offwhite text-primary;
   grid-area: footer;
 }
 
+.main_container {
+  @apply w-[90%] md:w-[80%] max-w-[1000px] mx-auto pt-4 md:pt-6 pb-4;
+  @apply grid;
+}
+
 #contact_info {
-  @apply grid pt-4;
+  @apply grid pt-4 gap-y-2;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#courses {
+  @apply grid-cols-1 md:grid-cols-2;
+  @apply grid justify-center justify-items-center gap-y-8 md:gap-x-4;
+  /* grid-template-columns: min(100%, 400px); */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 100%)); */
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
 }
 
-:root {
-  --foreground-rgb: 0, 0, 0;
+.divider {
+  @apply grid content-center grid-cols-[1fr_auto_1fr];
+  @apply text-primary font-medium;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
+.divider::before,
+.divider::after {
+  @apply p-[1px] m-3 bg-primary/80;
+  content: '';
+}
+
+.divider::before {
+  @apply ml-0;
+}
+
+.divider::after {
+  @apply mr-0;
+}
+
+#overlay_menu {
+  @apply h-full w-0 fixed z-10 top-0 right-0 bg-primary overflow-hidden;
+  transition: 0.5s;
 }
