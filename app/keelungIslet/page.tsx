@@ -2,26 +2,31 @@ import PageTitle from '@/app/components/PageTitle'
 import ButtonLink from '@/app/components/ButtonLink'
 import { KEELUNG_ISLET_RESERVATION_URL } from '@/app/lib/constant'
 import { courses } from '@/app/lib/course'
+
 interface Course {
   courseTitle: string
   hours: string
   coverage: string
   plans: Plan[]
 }
+
 interface Plan {
   name: string
   fare: string
 }
 
-export default function Home() {
-
+export default function KeelungIslet() {
   return (
     <main>
       <section className='main_container'>
         <PageTitle title='探索基隆嶼' />
         <section id='courses'>
           {
-            courses.map(course => (<Course key={course.courseTitle} {...course} />))
+            courses.map(course => {
+              return (
+                <Course key={course.courseTitle} {...course} />
+              )
+            })
           }
         </section>
         <section className='grid justify-center pt-[60px]'>
@@ -71,15 +76,3 @@ const Plan = ({ name, fare }: Plan) => {
     </div>
   )
 }
-
-{/* <div className='relative sm:h-[300px] h-[200px] sm:w-[400px] w-[80%]'>
-  <Image
-    src={`./image/logo.png`}
-    fill
-    // sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
-    alt='logo image'
-    style={{ objectFit: 'contain' }}
-    priority
-    unoptimized
-  />
-</div> */}

@@ -1,13 +1,17 @@
 'use client'
 import Link from 'next/link'
 
+import { LINE_URL, FACEBOOL_URL } from '@/app/lib/constant'
+
 export default function Footer() {
   return (
     <footer>
-      <section className='grid max-w-[1000px] mx-auto p-6 sm:px-10'>
-        <div className='font-semibold'>晉龍號海釣遊艇船隊</div>
+      <section className='main_container'>
+        <div className='grid grid-cols-[1fr_auto] justify-between'>
+          <h1 className="font-medium font-mono">晉龍號海釣遊艇船隊</h1>
+          <SocialMedia />
+        </div>
         <ContactInfo />
-        <SocialMedia />
       </section>
     </footer>
   )
@@ -16,17 +20,17 @@ export default function Footer() {
 const ContactInfo = () => {
   return (
     <div id='contact_info'>     
-      <div className='flex items-center gap-x-2 text-sm py-1'>
-        <i className="fa-solid fa-phone-volume"></i>
-        <p>( +886 ) 0918 373 560</p>
+      <div className='grid grid-cols-[auto_1fr] items-baseline gap-x-2 text-sm font-mono'>
+        <i className='fa-solid fa-phone-volume'></i>
+        <p>(+886)0918-373-560</p>
       </div>
-      <div className='flex items-center gap-x-2 text-sm py-1'>
-        <i className="fa-regular fa-envelope"></i>
+      <div className='hidden md:grid grid-cols-[auto_1fr] items-baseline gap-x-2 text-sm font-mono'>
+        <i className='fa-regular fa-envelope'></i>
         <p>jinlong.yacht@gmail.com</p>
       </div>
-      <div className='flex items-center gap-x-2 text-sm py-1'>
-        <i className="fa-solid fa-location-dot"></i>
-        <p>八斗子碧砂漁港 基隆市中正區北寧路211號</p>
+      <div className='grid grid-cols-[auto_1fr] items-baseline gap-x-2 text-sm font-mono'>
+        <i className='fa-solid fa-location-dot'></i>
+        <p>八斗子漁港 基隆市中正區北寧路211號</p>
       </div>
     </div>
   )
@@ -34,18 +38,18 @@ const ContactInfo = () => {
 
 const SocialMedia = () => {
   return (
-    <div className='grid grid-flow-col auto-cols-min gap-3 items-center pt-2'>
+    <div className='grid grid-flow-col auto-cols-min gap-3 items-center'>
       <Link 
-        href='https://www.facebook.com/profile.php?id=100063649581721'
+        href={FACEBOOL_URL}
         target='_blank'
       >
-        <i className='fa-brands fa-square-facebook text-[34px] text-[#3B5998]'></i>
+        <i className='fa-brands fa-square-facebook text-[24px] text-[#3B5998]'></i>
       </Link>
       <Link 
-        href='https://line.me/R/ti/p/%40qsj5646s'
+        href={LINE_URL}
         target='_blank'
       >
-        <i className='fa-brands fa-line text-3xl text-[#06C755]'></i>
+        <i className='fa-brands fa-line text-[20px] text-[#06C755]'></i>
       </Link>
     </div>
   )
