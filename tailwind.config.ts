@@ -21,9 +21,15 @@ const config: Config = {
       blue: colors.blue,
       gray: colors.gray,
       white: '#ffffff',
-      offwhite: '#fafafa',
+      offwhite: '#faf8f5',
+      // offwhite: '#fafafa',
     },
     extend: {
+      screens: {
+        'sm': '480px',
+        'md': '600px',
+        // 'md': '640px',
+      }
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       //   "gradient-conic":
