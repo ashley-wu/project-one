@@ -11,7 +11,6 @@ export default function OffshoreFishing() {
         <section className='grid grid-flow-col justify-center gap-x-9 pt-[60px]'>
           <ButtonLink title='海釣體驗預約' path={OFFSHORE_FISHING_RESERVATION_URL} />
           <ButtonLink title='專業海釣預約' path={FACEBOOL_URL} />
-
         </section>
       </section>      
     </main>
